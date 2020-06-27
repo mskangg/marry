@@ -9,19 +9,29 @@
   margin: 0;
   box-sizing: border-box;
 }
+@font-face {
+  font-family: 'Cafe24Oneprettynight';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 html,
 body {
   height: 100%;
 }
 body {
-  background: url('https://subtlepatterns.com/patterns/stardust.png');
+  /* background: url('https://subtlepatterns.com/patterns/stardust.png'); */
+  background: url('../img/배경.jpg');
+  background-repeat: round;
   display: flex;
-  font-family: Lato, serif;
+  /* font-family: Lato, serif; */
+  font-family: 'Cafe24Oneprettynight';
   min-height: 100%;
 }
 .gallery-wrapper {
   background: #888;
-  box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.15);
   margin: auto;
   overflow: hidden;
   position: relative;
@@ -86,26 +96,26 @@ body {
   top: 0;
   bottom: 0;
   right: 0;
-  transition: all 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .gallery__item--active .gallery__content {
   opacity: 1;
   transform: translate3d(0, 0, 0);
 }
 .gallery__item--active::before {
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(0, 0, 0, 0.6);
 }
 .gallery__content {
   position: relative;
   z-index: 1;
-  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 5s cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 0;
   transform: translate3d(20px, 0, 0);
 }
 .gallery__content h3,
 .gallery__content p,
 .gallery__content time {
-  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 5s cubic-bezier(0.4, 0, 0.2, 1);
   transform: translate3d(50px, 0, 0);
 }
 .gallery__content h3 {
@@ -113,7 +123,7 @@ body {
   font-size: 1.72rem;
   font-weight: normal;
   margin: 0 0 0.32em;
-  transition-delay: 0.25s;
+  transition-delay: 0.55s;
 }
 .gallery__content h3::after {
   content: '';
@@ -127,13 +137,13 @@ body {
   font-size: 1.05rem;
   line-height: 1.25;
   margin: 0 0 0.85em;
-  transition-delay: 0.35s;
+  transition-delay: 0.95s;
 }
 .gallery__content time {
   color: #cfd8dc;
   display: block;
   font-size: 0.85rem;
-  transition-delay: 0.45s;
+  transition-delay: 0.75s;
 }
 .gallery__item--active .gallery__content h3,
 .gallery__item--active .gallery__content p,
