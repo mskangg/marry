@@ -1,0 +1,142 @@
+:root {
+  --wrapper-width: 320px;
+  --wrapper-height: 568px;
+}
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  background: url('https://subtlepatterns.com/patterns/stardust.png');
+  display: flex;
+  font-family: Lato, serif;
+  min-height: 100%;
+}
+.gallery-wrapper {
+  background: #888;
+  box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.25);
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  height: var(--wrapper-height, 520px);
+  width: var(--wrapper-width, 320px);
+}
+.gallery__nav {
+  display: flex;
+  padding: 0;
+  margin: 1rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 99;
+  width: 100%;
+}
+.gallery__nav li {
+  display: block;
+  background: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 0.5;
+  margin: 8px;
+  height: 8px;
+  width: 8px;
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+.gallery__nav li:hover {
+  opacity: 0.85;
+  transform: scale(1.5);
+}
+.gallery__nav li.active {
+  opacity: 1;
+  transform: scale(2);
+}
+.gallery__items {
+  display: flex;
+  flex-direction: row;
+  width: 99999px;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: auto;
+}
+.gallery__item {
+  background-position: 50% 50%;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: var(--wrapper-height, 520px);
+  width: var(--wrapper-width, 320px);
+  position: relative;
+  padding: 1.5rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.gallery__item::before {
+  background: rgba(0, 0, 0, 0.15);
+  content: '';
+  display: block;
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  transition: all 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.gallery__item--active .gallery__content {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+.gallery__item--active::before {
+  background: rgba(0, 0, 0, 0.75);
+}
+.gallery__content {
+  position: relative;
+  z-index: 1;
+  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  transform: translate3d(20px, 0, 0);
+}
+.gallery__content h3,
+.gallery__content p,
+.gallery__content time {
+  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translate3d(50px, 0, 0);
+}
+.gallery__content h3 {
+  color: #fff;
+  font-size: 1.72rem;
+  font-weight: normal;
+  margin: 0 0 0.32em;
+  transition-delay: 0.25s;
+}
+.gallery__content h3::after {
+  content: '';
+  display: block;
+  border-top: 1px solid #fafafa;
+  margin: 0.75em 0;
+  width: 40px;
+}
+.gallery__content p {
+  color: #fafafa;
+  font-size: 1.05rem;
+  line-height: 1.25;
+  margin: 0 0 0.85em;
+  transition-delay: 0.35s;
+}
+.gallery__content time {
+  color: #cfd8dc;
+  display: block;
+  font-size: 0.85rem;
+  transition-delay: 0.45s;
+}
+.gallery__item--active .gallery__content h3,
+.gallery__item--active .gallery__content p,
+.gallery__item--active .gallery__content time {
+  transform: translate3d(0, 0, 0);
+}
