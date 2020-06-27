@@ -24,17 +24,23 @@
       <ul class="gallery__nav"></ul>
 
       <div class="gallery__items">
-        <section
+        <!-- <section
           class="gallery__item"
-          style="background-image: url('./img/청첩장.png');"
+          style="background-image: url('./img/4.jpg');"
         >
           <div class="gallery__content">
-            <h3>저희 드디어 결혼합니다.</h3>
-            <p>
-              결혼식에 못오시는 분들을 위해 피로연을 진행하려합니다.
-            </p>
-            <time style="float: right;">👉</time>
+            <h3>
+              하단의 손가락을 클릭하거나 드래그해서 넘겨주세요.
+            </h3>
+            <div style="text-align: end;" onclick="next()">👉</div>
           </div>
+        </section> -->
+
+        <section
+          class="gallery__item"
+          style="background-image: url('./img/main2.gif');"
+        >
+          <time style="text-align: end;" onclick="next()">👉</time>
         </section>
 
         <section
@@ -46,6 +52,8 @@
               스페인 가우디 성당 앞에서,
             </p>
             <time>Dec 2019</time>
+            <time style="float: left;" onclick="back()">👈</time>
+            <time style="float: right;" onclick="next()">👉</time>
           </div>
         </section>
 
@@ -74,11 +82,35 @@
         </section>
 
         <section
+          class="gallery__item"
+          style="background-image: url('./img/4.jpg');"
+        >
+          <div class="gallery__content">
+            <p>
+              흥겨운 춤과 함께,
+            </p>
+            <time>Dec 2019</time>
+          </div>
+        </section>
+
+        <section
+          class="gallery__item"
+          style="background-image: url('./img/5.jpg');"
+        >
+          <div class="gallery__content">
+            <p>
+              흥겨운 춤과 함께,
+            </p>
+            <time>Dec 2019</time>
+          </div>
+        </section>
+
+        <!-- <section
           class="gallery__item2"
           style="background-image: url('./img/4.jpg');"
         >
           <div class="gallery__content"></div>
-        </section>
+        </section> -->
       </div>
     </main>
     <!-- partial -->
